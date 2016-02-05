@@ -1,4 +1,10 @@
 __author__ = 'eric'
+"""
+filename:       invisiblecow2.py
+Description:    A command line version of find the invisible cow implemented modularly using functions
+Author:         E.Fabroa
+"""
+
 
 def showWelcomeHeader():
     """
