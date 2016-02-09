@@ -98,6 +98,15 @@ def getPlayerXY():
     return playerX, playerY
 
 def getZone(playerX, playerY, cowX, cowY):
+    """
+    Compute the zone where player guess resides based on cow location distance
+
+    :param playerX: int - player x value
+    :param playerY: int - player y value
+    :param cowX: int - cox x value
+    :param cowY: int - cox y value
+    :return: int - zone where player guess resides
+    """
 
     # compute distance
     distance = get_distance(playerX, playerY, cowX, cowY)
@@ -124,6 +133,10 @@ def getZone(playerX, playerY, cowX, cowY):
         return 7
 
 def get_cow_xy():
+    """
+    Generate a random location of the cow
+    :return: int, int - x value of cow, y value of cow
+    """
 
     x = random.randint(0,640)
     y = random.randint(0,480)
@@ -132,6 +145,11 @@ def get_cow_xy():
 
 
 def main():
+    """
+    Main executable program
+
+    :return: None
+    """
 
     # show the welcome
     showWelcomeHeader()
