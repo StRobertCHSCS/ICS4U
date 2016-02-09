@@ -79,6 +79,10 @@ def isOutofBounds(x,y,maxX,maxY):
     return x<0 or x> maxX or y<0 or y>maxY
 
 def getPlayerXY():
+    """
+    Gets a valid x,y guess from user input
+    :return: int, int - valid x value, valid y value
+    """
 
     # prompt the player for x and y values
     playerX = input("Enter an x value: ")
