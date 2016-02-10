@@ -91,6 +91,10 @@ def get_cow_xy():
     return cow_x, cow_y
 
 def main():
+    """
+    Main executable program
+    :return: None
+    """
 
     # show the welcome
     showWelcomeHeader()
