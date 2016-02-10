@@ -53,6 +53,7 @@ def showStatus(zone):
     else:
         print "m"
 
+
 def get_distance(x1,y1,x2,y2):
     """
     Calculate the distance between two points
@@ -66,6 +67,7 @@ def get_distance(x1,y1,x2,y2):
     inner = (x2 - x1)**2 + (y2-y1)**2
     return math.sqrt(inner)
 
+
 def isOutofBounds(x,y,maxX,maxY):
     """
     Determine if a given point is within a given boundary
@@ -77,6 +79,7 @@ def isOutofBounds(x,y,maxX,maxY):
     """
 
     return x<0 or x> maxX or y<0 or y>maxY
+
 
 def getPlayerXY():
     """
@@ -96,6 +99,7 @@ def getPlayerXY():
         playerY = input("Enter a y value: ")
 
     return playerX, playerY
+
 
 def getZone(playerX, playerY, cowX, cowY):
     """
@@ -131,6 +135,7 @@ def getZone(playerX, playerY, cowX, cowY):
 
     else:
         return 7
+
 
 def get_cow_xy():
     """
@@ -172,5 +177,6 @@ def main():
 
         if zone == 1:
             found = True
+
 
 main()
