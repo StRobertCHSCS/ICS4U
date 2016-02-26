@@ -1,1 +1,17 @@
-__author__ = 'eric'
+def addInterest(balanceList, rate):
+    newBalance = []
+    for i in range(len(balanceList)):
+ #       balanceList[i] = balanceList[i] * (1+rate)
+         newBalance.append(balanceList[i] * (1+rate))
+
+    return newBalance
+        
+
+def main ():
+    amounts = [1000, 1200, 900, 1100]
+    print("The initial amounts are:",amounts)
+    rate = 0.05
+    amounts = addInterest(amounts, rate)
+    print("The updated amounts are:",amounts)
+
+main()

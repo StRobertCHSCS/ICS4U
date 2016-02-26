@@ -3,6 +3,10 @@ import math
 import random
 
 def showWelcomeHeader():
+    """
+    Display the welcome header
+    :return: None
+    """
 
     # welcome header
     print "**********************************************"
@@ -11,6 +15,11 @@ def showWelcomeHeader():
     print ""
 
 def showStatus(zone):
+    """
+    Output the appropriate clue based on zone
+    :param zone: int - the calculated zone of the guess
+    :return:None
+    """
 
     if zone == 1:
         print "Yeah! You found it!"
@@ -34,11 +43,27 @@ def showStatus(zone):
         print "m"
 
 def get_distance(x1,y1,x2,y2):
+        """
+    Compute the distance between two points
+    :param x1: int - point 1 x
+    :param y1: int - point 1 y
+    :param x2: int - point 2 x
+    :param y2: int - point 2 y
+    :return: float - computed distance
+    """
 
     inner = (x2 - x1)**2 + (y2 - y1)**2
     return math.sqrt(inner)
 
 def isOutofBounds(x, y, maxX, maxY):
+    """
+    check to see if player's guess is within the boundaries
+    :param x: int - player x
+    :param y: int - player y
+    :param maxX:  - maximum x
+    :param maxY:  - maximum y
+    :return: boolean
+    """
 
     return x < 0 or y < 0 or x > maxX or y > maxY
 

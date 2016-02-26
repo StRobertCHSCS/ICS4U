@@ -13,6 +13,7 @@ def main():
     y_2 = input("Enter an y-value for the second point: ")
 
     dist = distance(x_1, y_1, x_2, y_2)
+
     print "The distance between the points is", dist
 
 main()

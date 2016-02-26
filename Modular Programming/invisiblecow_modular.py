@@ -25,6 +25,7 @@ def showWelcomeHeader():
     print "**********************************************"
     print ""
 
+
 def showStatus(zone):
     """
     Display the appropriate status based on a given zone
