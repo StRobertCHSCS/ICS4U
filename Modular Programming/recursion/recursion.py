@@ -67,3 +67,43 @@ def rpow_iter(x,y):
         pow = pow * x
     return pow
 
+
+def rpow_recur(x, y):
+    """
+    Compute x to the power of y (x**y).  An recursive solution
+    :param x: int - the base
+    :param y: int - the exponent
+    :return: x**y
+    """
+    if y == 0:
+        return 1
+    else:
+        return x * rpow_recur(x, y - 1)
+
+
+def factorial(n):
+    """
+    Compute the factorial of n
+    :param n: int > 0
+    :return: int -  n!
+    """
+    if n == 1:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+
+def recur_len(str):
+    """
+    Compute the length of a str
+    :param str: str
+    :return: int
+    """
+
+    if str == '':
+        return 0
+    else:
+        return 1 + recur_len(str[1:])
+
+print recur_len("hello")
+
