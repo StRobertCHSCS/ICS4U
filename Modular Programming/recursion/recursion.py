@@ -78,7 +78,7 @@ def rpow_recur(x, y):
     if y == 0:
         return 1
     else:
-        return x * rpow_recur(x, y - 1)
+        return x * rpow_recur(x,y-1)
 
 
 def factorial(n):
@@ -105,5 +105,36 @@ def recur_len(str):
     else:
         return 1 + recur_len(str[1:])
 
-print recur_len("hello")
+def recursive_reverse(mystring):
+
+    if mystring == "":
+        return mystring
+    else:
+        return recursive_reverse(mystring[1:]) + mystring[0]
+
+def isPalindrome(mystring):
+    if mystring == "":
+        return True
+    elif len(mystring) == 1:
+        return True
+    else:
+        return mystring[0] == mystring[-1] and isPalindrome(mystring[1:-1])
+
+
+def rec_min(numlist):
+
+    if len(numlist) == 1:
+        return numlist[0]
+    else:
+        min_of_the_rest = rec_min(numlist[1:])
+        if numlist[0] <= min_of_the_rest:
+            return numlist[0]
+        else:
+            return min_of_the_rest
+
+print rec_min([4,6,2,1,8,9])
+
+
+
+
 
