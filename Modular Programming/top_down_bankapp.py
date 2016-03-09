@@ -1,5 +1,8 @@
 __author__ = 'eric'
 
+def get_data(filename):
+    pass
+
 
 def process_transactions(initial_balance, transactions_list):
     deposit_count = 0
@@ -19,3 +22,22 @@ def process_transactions(initial_balance, transactions_list):
             withdrawal_count += 1
 
     return transactions_list, current_balance, withdrawal_count, deposit_count
+
+
+def get_tran_type(transaction):
+    pass
+
+
+def get_tran_amount(transaction):
+    pass
+
+
+def new_balance(curr_balance,transaction_type, transaction_amount):
+    pass
+
+
+def trans_string(transaction_list, curr_balance):
+    pass
+
+
+
