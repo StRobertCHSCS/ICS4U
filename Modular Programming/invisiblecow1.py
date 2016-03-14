@@ -6,7 +6,7 @@ import math
 print "**********************************************"
 print "* Welcome to the Find the Invisible Cow Game *"
 print "**********************************************"
-print ""
+print " "
 
 
 # get random x and y - represents the location of the invisible cow
