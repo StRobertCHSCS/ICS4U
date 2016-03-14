@@ -1,12 +1,22 @@
 __author__ = 'eric'
 
 def get_data(filename):
-
+    """
+    get data from datafile and return initial balance and transactions list
+    :param filename:
+    :return: float, str[ ]
+    """
 
     datafile = open(filename, 'r')
 
     initial_balance = float(datafile.readline())
+    transactions_list = datafile.readlines()
 
+    # clean up leading/trailing whitespace
+    for t in range (len(transactions_list)):
+        transactions_list[t] = transactions_list[t].strip()
+
+    return initial_balance, transactions_list
 
 
 def process_transactions(initial_balance, transactions_list):
@@ -37,19 +47,54 @@ def process_transactions(initial_balance, transactions_list):
 
 
 def get_tran_type(transaction):
-    pass
+    return transaction[0]
 
 
 def get_tran_amount(transaction):
-    pass
+    tran_items = transaction.split(",")
+    amount_str = tran_items[1]
+    return float(amount_str)
 
 
 def new_balance(curr_balance,transaction_type, transaction_amount):
-    pass
+
+    if transaction_type.lower() == 'd':
+        curr_balance += transaction_amount
+    else:
+        curr_balance -= transaction_amount
+
+    return curr_balance
 
 
-def trans_string(transaction_list, curr_balance):
-    pass
+def trans_string(transaction, curr_balance):
+    return transaction +"," + str(curr_balance)
 
 
+
+
+
+def print_report(transactions_list, initial_balance, final_balance, deposit_count, withdrawal_count):
+
+    report_str = ""
+    header = "{0:5}{1:>10}{2:>10}{3:>10}{4:>15}\n".format("Type","Amount","Date", "Vendor", "Current Balance")
+    report_str += header
+
+    for tran in transactions_list:
+        tran_items = trans.split(",")
+        tran_type = get_tran_amount(tran)
+        amount = get_tran_amount(tran)
+
+
+
+
+
+def main():
+    # Get Data
+    starting_balance, transactions_list = get_data('data.txt')
+
+    # Process Transactions
+    new_transactions_list, final_balance, deposit_count, withdrawal_count = process_transactions(starting_balance,transactions_list)
+
+    # Print Report
+    print_report(new_transactions_list, starting_balance, final_balance, deposit_count, withdrawal_count)
 
