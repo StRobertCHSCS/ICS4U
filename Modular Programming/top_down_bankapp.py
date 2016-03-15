@@ -13,7 +13,7 @@ def get_data(filename):
     transactions_list = datafile.readlines()
 
     # clean up leading/trailing whitespace
-    for t in range (len(transactions_list)):
+    for t in range(len(transactions_list)):
         transactions_list[t] = transactions_list[t].strip()
 
     return initial_balance, transactions_list
