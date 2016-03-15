@@ -1,0 +1,13 @@
+Type     Amount           Date         Vendor     Current Balance
+
+d         150.0      9/15/2015            TDL               450.0
+w          50.0      9/16/2015       EB Games               400.0
+w         12.95      9/17/2015       Chipotle              387.05
+d          50.0      30/9/2015            McD              437.05
+w         100.0      2/10/2015        Walmart              337.05
+w          25.0      5/10/2015      Dollarama              312.05
+
+Starting balance: $300.00
+Final balance: $312.05
+Deposit Count: 4
+Withdrawal Count: 2
