@@ -16,6 +16,8 @@ def get_data(filename):
     for t in range(len(transactions_list)):
         transactions_list[t] = transactions_list[t].strip()
 
+    datafile.close()
+
     return initial_balance, transactions_list
 
 
@@ -47,16 +49,33 @@ def process_transactions(initial_balance, transactions_list):
 
 
 def get_tran_type(transaction):
+    """
+    get the transaction type from a transaction string ('d' or 'w')
+    :param transaction: str - a transaction string
+    :return: str
+    """
     return transaction[0]
 
 
 def get_tran_amount(transaction):
+    """
+    get the transaction amount from a transaction string
+    :param transaction: str - a transaction string
+    :return: float
+    """
     tran_items = transaction.split(",")
     amount_str = tran_items[1]
     return float(amount_str)
 
 
 def new_balance(curr_balance,transaction_type, transaction_amount):
+    """
+    compute and return a new balance based on transaction type
+    :param curr_balance: float - the current balance
+    :param transaction_type: str -  transaction type i.e "d" for deposit, "w" for withdrawal
+    :param transaction_amount: float - transaction amount
+    :return: float - the updated balance
+    """
 
     if transaction_type.lower() == 'd':
         curr_balance += transaction_amount
@@ -67,6 +86,12 @@ def new_balance(curr_balance,transaction_type, transaction_amount):
 
 
 def trans_string(transaction, curr_balance):
+    """
+    compute a new transaction string with the current balance appended to it.
+    :param transaction: str - a transaction string
+    :param curr_balance: float - the current balance
+    :return: new transaction string
+    """
     return transaction +"," + str(curr_balance)
 
 
@@ -76,13 +101,35 @@ def trans_string(transaction, curr_balance):
 def print_report(transactions_list, initial_balance, final_balance, deposit_count, withdrawal_count):
 
     report_str = ""
-    header = "{0:5}{1:>10}{2:>10}{3:>10}{4:>15}\n".format("Type","Amount","Date", "Vendor", "Current Balance")
-    report_str += header
 
+    # create the table header
+    header = "{0:5}{1:>10}{2:>15}{3:>15}{4:>20}\n".format("Type","Amount","Date", "Vendor", "Current Balance")
+    report_str += header + '\n'
+
+    # create the table body
     for tran in transactions_list:
-        tran_items = trans.split(",")
-        tran_type = get_tran_amount(tran)
+        tran_items = tran.split(",")
+        tran_type = get_tran_type(tran)
         amount = get_tran_amount(tran)
+        tran_date = tran_items[2]
+        tran_vendor = tran_items[3]
+        tran_balance = float(tran_items[4])
+        report_str += "{0:5}{1:>10}{2:>15}{3:>15}{4:>20}\n".format(tran_type,amount,tran_date, tran_vendor, tran_balance)
+
+    # append count reports
+    report_str += '\n'
+    report_str += "Starting balance: ${0:0.2f}\n".format(initial_balance)
+    report_str += "Final balance: ${0:0.2f}\n".format(final_balance)
+    report_str += "Deposit Count: {0}\n".format(deposit_count)
+    report_str += "Withdrawal Count: {0}\n".format(withdrawal_count)
+
+    report_file = open("bank_report.txt",'w')
+    report_file.write(report_str)
+    report_file.close()
+
+
+
+
 
 
 
@@ -98,3 +145,4 @@ def main():
     # Print Report
     print_report(new_transactions_list, starting_balance, final_balance, deposit_count, withdrawal_count)
 
+main()
