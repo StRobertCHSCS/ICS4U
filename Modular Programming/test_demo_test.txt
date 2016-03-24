@@ -1,0 +1,32 @@
+
+
+>>> from testing_demo import *
+
+General Case #1
+>>> my_squareroot(4)
+2.0
+
+General Case #2
+>>> my_squareroot(7)
+2.6457513110645907
+
+
+Unusual Case #1
+>>> my_squareroot(-4)
+Traceback (most recent call last):
+ValueError: negative number cannot be raised to a fractional power
+
+
+Unusual Case #2
+>>> my_squareroot()
+Traceback (most recent call last):
+TypeError: my_squareroot() takes exactly 1 argument (0 given)
+
+Unusual Case #3
+>>> my_squareroot("4")
+Traceback (most recent call last):
+TypeError: unsupported operand type(s) for ** or pow(): 'str' and 'float'
+
+Corner Case
+>>> my_squareroot(0)
+0
