@@ -5,6 +5,18 @@ def my_squareroot(num):
     compute the square root of num
     :param num:
     :return: float
+
+    General Case #1
+    >>> my_squareroot(4)
+    2.0
+
+    General Case #2
+    >>> my_squareroot(7)
+    2.6457513110645907
+
+    Corner Case
+    >>> my_squareroot(0)
+    0
     """
 
     return num**(0.5)
@@ -48,5 +60,13 @@ def isTriangle(a,b,c):
         return True
     else:
         return False
+
+def main():
+    print my_squareroot(9)
+    print wCount("whoa")
+    print isTriangle(0, 0, 60)
+
+if __name__ == '__main__':
+    main()
 
 
