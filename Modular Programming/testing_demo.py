@@ -66,6 +66,10 @@ def gamesim(numgames):
     return randint(0, numgames)
 
 
+def printresults(computed_value, numgames):
+    print "The number of games won is", computed_value, "out of", numgames, "games."
+
+
 def main():
     print my_squareroot(9)
     print wCount("whoa")

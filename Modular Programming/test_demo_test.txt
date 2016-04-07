@@ -43,3 +43,6 @@ created with ... followed by 4 spaces.
 ...   return 0 <= gameswon and gameswon <= numgames
 >>> simtest(500)
 True
+
+>>> printresults(252, 500)
+The number of games won is 252 out of 500 games.
