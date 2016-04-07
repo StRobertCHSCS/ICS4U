@@ -1,4 +1,5 @@
 __author__ = 'eric'
+from random import *
 
 def my_squareroot(num):
     """
@@ -61,6 +62,10 @@ def isTriangle(a,b,c):
     else:
         return False
 
+def gamesim(numgames):
+    return randint(0, numgames)
+
+
 def main():
     print my_squareroot(9)
     print wCount("whoa")
@@ -68,5 +73,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 

@@ -32,3 +32,14 @@ TypeError: unsupported operand type(s) for ** or pow(): 'str' and 'float'
 Corner Case
 >>> my_squareroot(0)
 0.0
+
+
+This is an example of testing non-exact expected values.  In this case, we verify that a
+resulting value for a function gamesim() falls within a certain range.
+Notice that we create our own function to do this more complex test.  The indents for the function
+created with ... followed by 4 spaces.
+>>> def simtest(numgames):
+...   gameswon = gamesim(numgames)
+...   return 0 <= gameswon and gameswon <= numgames
+>>> simtest(500)
+True
