@@ -11,9 +11,9 @@ class Dog(object):
         print "Woof"
 
 class Point(object):
-    def __init__(self):
-        self.x = 0
-        self.y = 0
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
 
     def printMe(self):
         print "({0},{1})".format(self.x, self.y)
@@ -25,7 +25,7 @@ class Point(object):
         self.x = self.x + x_inc
         self.y = self.y + y_inc
 
-    def get_distance(self,other_point):
+    def get_distance(self, other_point):
         """
         Compute and return the distance between this point and other_point
         :param other_point: Point
@@ -96,6 +96,10 @@ def example4_1():
     p1.printMe()
 
 def example4_2():
+
+    """
+    # commented out to get constructors to work
+
     p1 = Point()
     p1.x = 12
     p1.y = 21
@@ -105,5 +109,22 @@ def example4_2():
     p2.y = 75
 
     print p1.get_distance(p2)
+    """
 
 example4_2()
+
+def practice_2_2_1():
+    """
+    Modify the constructor of the Point class so that the x,y values are set at the time of instance creation.
+    Write a program that creates an instance of a Point
+    :return: None
+    """
+
+    #create an instance of a Point
+    p1 = Point(2,3)
+    p1.printMe()
+
+    p1.move(10,10)
+    p1.printMe()
+
+practice_2_2_1()
