@@ -40,13 +40,13 @@ class Rectangle(object):
     A class representing a rectangle
     """
 
-    def __init__(self):
+    def __init__(self, width, height):
         """
         Initialize the rectangle
         :return: None
         """
-        self.width = 0
-        self.height = 0
+        self.width = width
+        self.height = height
 
     def get_area(self):
         """
@@ -54,6 +54,8 @@ class Rectangle(object):
         :return: integer
         """
         return self.width * self.height
+
+
 
 
 def example1():
@@ -127,4 +129,12 @@ def practice_2_2_1():
     p1.move(10,10)
     p1.printMe()
 
-practice_2_2_1()
+
+
+def rectangle_construct_demo():
+
+    square = Rectangle(20,20)
+    print square.width
+    print square.height
+
+rectangle_construct_demo()
