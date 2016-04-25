@@ -51,9 +51,12 @@ class Student(object):
         """
         Initialize the student
         """
-        self.firstName = firstName
-        self.lastName = lastName
-        self.mark = mark
+        self.__firstName = firstName
+        self.__lastName = lastName
+        self.__mark = mark
+
+    def get_mark(self):
+        return self.__mark
 
 class Classroom(object):
 
@@ -63,24 +66,30 @@ class Classroom(object):
         self.students = []  #to contain Student objects
 
 
+    def __marks_sum(self):
+        """
+        Compute the sum of student marks
+        return: float - the sum of student marks
+        """
+
+        total = 0
+        for student in self.students:
+            total = total + student.get_mark()
+
+        return float(total)
+
+
     def get_classAverage(self):
         """
         return the average mark of the students
         """
 
-        total = 0
-
-        #sum up the marks
-        for student in self.students:
-            total += student.mark
-
-        return float(total)/len(self.students)
+        return self.__marks_sum()/len(self.students)
 
 
     def add_student(self, firstName, lastName, mark):
 
         self.students.append(Student(firstName, lastName, mark))
-
 
 
 def example1_c():
@@ -120,7 +129,7 @@ def example2():
 
 def example2_1():
     """
-    uses the add_student method
+    uses the classroom add_student() method, much cleaner than the previous example
     :return:
     """
 
@@ -131,3 +140,9 @@ def example2_1():
     fab_247.add_student("Alena", "Calma", 13)
     fab_247.add_student("Vince", "Mak", 100)
     fab_247.add_student("Colin", "Wong", 96)
+
+    print fab_247.get_classAverage()
+
+    print fab_247._Classroom__marks_sum()  #accessing a 'hidden' method through the backdoor
+
+example2_1()
