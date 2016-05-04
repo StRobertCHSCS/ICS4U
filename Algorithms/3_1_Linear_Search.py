@@ -63,3 +63,37 @@ def example2():
         print "Your password has been reset"
 
 
+def birthdayMatch (maxPartySize):
+    """
+    Checks if a birthday match exists within a group of size maxPartySize
+    param: maxPartySize: int - the size of the group of people to test.
+    return: boolean - True if match found
+    """
+
+    birthday_list = []
+    for i in range(maxPartySize):
+        new_person = random.randint(0, 364)
+
+        # a linear search
+        for i in range(len(birthday_list)):
+            if birthday_list[i] == new_person:
+                return True
+
+        birthday_list.append(new_person)
+
+    return False
+
+def main():
+    num_test = 10000
+    count = 0
+
+    for i in range(num_test):
+        if birthdayMatch(30):
+            count += 1
+
+    print count/float(num_test)
+
+main()
+
+
+
