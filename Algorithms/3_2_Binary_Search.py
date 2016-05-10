@@ -52,7 +52,9 @@ def insert_linear():
             if len(int_list) > 0:
                 # use linear search and iterate through list to find insert location
 
-
+                location = 0
+                while location < len(int_list) and int_list[location] < number:
+                    location += 1
 
                 int_list.insert(location, number)
 
@@ -60,3 +62,6 @@ def insert_linear():
                 int_list.append(number)
 
             print int_list
+
+#example1()
+insert_linear()
